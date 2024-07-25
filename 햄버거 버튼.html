@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+
+            $(".hamburger").click(function(){
+                $(this).toggleClass("act")
+            })
+
+        })
+    </script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container h1{
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .row{
+            width: 550px;
+            height: 400px;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        .col{
+            width: 120px;
+            height: 120px;
+            background-color: #006781;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger{
+            /* border: 1px solid red; */
+        }
+
+        .hamburger:hover{
+            cursor: pointer;
+        }
+
+        /* ham_1 영역 */
+
+        #ham_1.act .line:nth-child(2){
+            opacity: 0;
+        }
+
+        #ham_1.act .line:nth-child(1){
+            transform: translateY(13px) rotate(45deg); /* 방향을 돌리기 전에 좌표중심을 맞춰주고 돌려줘야 한다 */
+        }
+
+        #ham_1.act .line:nth-child(3){
+            transform: translateY(-13px) rotate(-45deg); /* 방향을 돌리기 전에 좌표중심을 맞춰주고 돌려줘야 한다 */  
+        }
+
+        /* ham_2 영역 */
+
+        #ham_2.act .line:nth-child(1){
+            transform: translateY(13px);
+        }
+
+        #ham_2.act .line:nth-child(2){}
+
+        #ham_2.act .line:nth-child(3){
+            transform: translateY(-13px);
+        }
+
+        /* ham_3 영역 */
+
+        #ham_3.act .line:nth-child(1){
+            width: 40px;
+            transform: translateX(-10px) rotate(-45deg);
+        }
+
+        #ham_3.act .line:nth-child(2){}
+
+        #ham_3.act .line:nth-child(3){
+            width: 40px;
+            transform: translate(-10px) rotate(45deg);
+        }
+
+        /* ham_4 영역 */
+
+        #ham_4.act .line:nth-child(1){
+            width: 40px;
+            transform: translateX(10px) rotate(45deg);
+        }
+
+        #ham_4.act .line:nth-child(2){}
+
+        #ham_4.act .line:nth-child(3){
+            width: 40px;
+            transform: translate(10px) rotate(-45deg);
+        }
+
+        /* ham_5 영역 */
+
+        #ham_5.act .line:nth-child(1){
+            transform: translateY(14px) rotate(45deg);
+            transform-origin: right;
+            width: 35px;
+        }
+
+        #ham_5 .line:nth-child(2){
+            transition-delay: 0.3s;
+        }
+
+        #ham_5.act .line:nth-child(2){
+            opacity: 0;
+            transition: none;
+        }
+        
+        #ham_5.act .line:nth-child(3){
+            transform: translateY(-14px) rotate(-45deg);
+            transform-origin: right;
+            width: 35px;
+        }
+
+        #ham_5.act{
+            transform: rotate(90deg);
+        }
+
+        /* ham_6 영역 */
+
+        #ham_6.act .line:nth-child(1){
+            transform: translateY(13px);
+            transition-delay: 0.3s;
+        }
+
+        #ham_6.act .line:nth-child(2){
+            width: 0;
+        }
+        
+        #ham_6.act .line:nth-child(3){
+            transform: translateY(-13px) rotate(90deg);
+            transition-delay: 0.3s;
+        }
+
+        #ham_6.act{
+            transform: rotate(45deg);
+            transition: all 0.3s ease-in-out 0.6s;
+        }
+
+        /* ham_7 영역 */
+
+        #ham_7.act .line:nth-child(1){
+            width: 30px;
+            transform: translateX(-10px);
+        }
+
+        #ham_7.act .line:nth-child(2){
+            width: 40px;
+            transform: translateX(-5px);
+        }
+        
+        #ham_7.act .line:nth-child(3){}
+
+        #ham_7.act{
+            transform: rotate(30deg);
+            transition: all 0.3s 0.5s;
+        }
+
+        /* ham_8 영역 */
+
+        #ham_8.act .line:nth-child(1){
+            transform: translateY(13px);
+        }
+
+        #ham_8.act .line:nth-child(2){
+            opacity: 0;
+        }
+        
+        #ham_8.act .line:nth-child(3){
+            transform: translateY(-13px) rotate(90deg);
+        }
+
+        /* ham_9 영역 */
+
+        #ham_9{
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        #ham_9.act{
+            transform: rotate(45deg);
+        }
+
+        #ham_9::before{
+            content: "";
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s;
+        }
+        #ham_9.act::before{
+            border: 5px solid white;
+        }
+
+        #ham_9.act .line{
+            width: 35px;
+        }
+
+        #ham_9.act .line:nth-child(1){
+            transform: translateY(13px);
+        }
+
+        #ham_9.act .line:nth-child(2){
+            opacity: 0;
+        }
+        
+        #ham_9.act .line:nth-child(3){
+            transform: translateY(-13px) rotate(-90deg);
+        }
+
+        /* ham_10 영역 */
+
+        #ham_10{
+            transition: all 0.3s;
+        }
+
+        #ham_10.act{
+            transform: rotate(90deg);
+            transition-delay: 0.5s;
+        }
+
+        #ham_10.act .line:nth-child(1){
+            width: 30px;
+        }
+
+        #ham_10.act .line:nth-child(2){
+            width: 40px;
+        }
+        
+        #ham_10.act .line:nth-child(3){}
+
+        /* ham_11 영역 */
+
+        #ham_11{
+            transition: all 0.3s;
+        }
+
+        #ham_11.act{
+            animation: move 0.6s forwards;
+        }
+
+        #ham_11.act .line:nth-child(1){
+            transform: translateY(13px) rotate(45deg);
+            transition-delay: 0.2s;
+        }
+
+        #ham_11.act .line:nth-child(2){
+            opacity: 0;
+            transition-delay: 0.2s;
+        }
+        
+        #ham_11.act .line:nth-child(3){
+            transform: translateY(-13px) rotate(-45deg);
+            transition-delay: 0.2s;
+        }
+
+        @keyframes move{
+            0%, 100%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(0);
+            }
+        }
+
+        /* ham_12 영역 */
+
+        #ham_12{}
+
+        #ham_12.act{}
+
+        #ham_12.act .line:nth-child(1){
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        #ham_12.act .line:nth-child(2){}
+        
+        #ham_12.act .line:nth-child(3){
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        .hamburger .line{
+            display: block;
+            width: 50px;
+            height: 5px;
+            background-color: white;
+            margin: 8px auto;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>햄버거 아이콘 애니메이션</h1>
+
+        <div class="row">
+            <!-- w550 * h550 -->
+            <div class="col col1">
+                <div class="hamburger" id="ham_1">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col2">
+                <div class="hamburger" id="ham_2">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col3">
+                <div class="hamburger" id="ham_3">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col4">
+                <div class="hamburger" id="ham_4">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col5">
+                <div class="hamburger" id="ham_5">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col6">
+                <div class="hamburger" id="ham_6">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col7">
+                <div class="hamburger" id="ham_7">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col8">
+                <div class="hamburger" id="ham_8">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col9">
+                <div class="hamburger" id="ham_9">
+
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col10">
+                <div class="hamburger" id="ham_10">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col11">
+                <div class="hamburger" id="ham_11">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col col12">
+                <div class="hamburger" id="ham_12">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

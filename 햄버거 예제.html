@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $(".hamburger").click(function(){
+                $(this).toggleClass("act")
+                $(".left_side").toggleClass("on")
+            })
+        })
+    </script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header{
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            position: fixed;
+        }
+
+        .head_inner{
+            width: 1200px;
+            height: 100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .col{
+            width: 80px;
+            height: 80px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .hamburger{
+            /* border: 1px solid red; */
+        }
+
+        .hamburger:hover{
+            cursor: pointer;
+        }
+
+        #ham_10{
+            transition: all 0.3s;
+        }
+
+        #ham_10.act{
+            transform: rotate(90deg);
+            transition-delay: 0.5s;
+        }
+
+        #ham_10.act .line:nth-child(1){
+            width: 30px;
+        }
+
+        #ham_10.act .line:nth-child(2){
+            width: 40px;
+        }
+        
+        #ham_10.act .line:nth-child(3){}
+
+        .hamburger .line{
+            display: block;
+            width: 50px;
+            height: 5px;
+            background-color: white;
+            margin: 8px auto;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        section{
+            height: 10000px;
+            background-image: linear-gradient(yellow, green);
+        }
+
+        .left_side{
+            width: 500px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: -500px;
+            transition: all 0.3s;
+        }
+
+        .left_side.on{
+            left: 0;
+            transition-delay: 0.5s;
+        }
+
+        .st0{fill:url(#SVGID_1_);stroke:#000000;stroke-miterlimit:10;}
+
+    </style>
+</head>
+<body>
+    <div class="left_side">
+        left side
+    </div>
+
+    <header class="header">
+        <div class="head_inner">
+            <h1>로고</h1>
+
+            <div class="col col10">
+                <div class="hamburger" id="ham_10">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h1>
+            section1
+        </h1>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 210 198" style="enable-background:new 0 0 210 198;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);stroke:#000000;stroke-miterlimit:10;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="6.5944" y1="98.8283" x2="203.4056" y2="98.8283">
+	<stop  offset="0" style="stop-color:#FFF200"/>
+	<stop  offset="1" style="stop-color:#FBB040"/>
+</linearGradient>
+<polygon class="st0" points="105,5.24 135.41,66.85 203.41,76.73 154.2,124.7 165.82,192.42 105,160.44 44.18,192.42 55.8,124.7 
+	6.59,76.73 74.59,66.85 "/>
+</svg>
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/slick.css">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/fullpage.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $(".box").fullpage({
+                navigation: true,
+                navigationTooltips: ["페이지1", "페이지2", "페이지3", "페이지4", "페이지5"],
+                navigationPosition: "left"
+            })
+        })// fin
+    </script>
+
+    <style type="text/css">
+        
+        #sec0{
+            background-image: url(img/bg1.jpg);
+        }
+        #sec1{
+            background-image: url(img/bg2.jpg);
+        }
+        #sec2{
+            background-image: url(img/bg3.jpg);
+        }
+        #sec3{
+            background-image: url(img/bg4.jpg);
+        }
+        #sec4{
+            background-image: url(img/bg5.jpg);
+        }
+
+        .section{
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="section" id="sec0"><h1>page1</h1></div>
+        <div class="section" id="sec1"><h1>page2</h1></div>
+        <div class="section" id="sec2"><h1>page3</h1></div>
+        <div class="section" id="sec3"><h1>page4</h1></div>
+        <div class="section" id="sec4"><h1>page5</h1></div>
+    </div>
+</body>
+</html>

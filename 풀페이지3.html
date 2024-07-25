@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/fullpage.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $("#box").fullpage({
+                sectionsColor: ["red", "green", "blue"],
+                slidesNavigation: true,
+                slidesNavPosition: "top" // 기본값은 아래이다
+                
+            })
+        })// fin
+    </script>
+
+    <style type="text/css">
+        #box2{
+            text-align: center;
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="section" id="box1">
+            <h1>section1</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque enim deleniti consequatur esse sunt doloremque cum cupiditate eum iusto voluptatem. Earum itaque inventore natus. Veniam ipsum odit sunt sed a?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sint eligendi necessitatibus unde facilis cumque sunt deleniti tenetur! Reiciendis, explicabo! Doloremque magni ut odio exercitationem deleniti odit blanditiis sapiente incidunt!
+            </p>
+        </div>
+
+        <div class="section" id="box2">
+            <!-- 갖고오는 풀페이지 기능에서 좌우로 슬라이드 되는 요소들에게는 section이라는 클레스명이 있어야 한다 -->
+            <div class="slide"><h2>page1</h2></div>
+            <div class="slide"><h2>page2</h2></div>
+            <div class="slide"><h2>page3</h2></div>
+            <div class="slide"><h2>page4</h2></div>
+            <div class="slide"><h2>page5</h2></div>
+        </div>
+
+        <div class="section" id="box3">
+            <h1>section3</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque enim deleniti consequatur esse sunt doloremque cum cupiditate eum iusto voluptatem. Earum itaque inventore natus. Veniam ipsum odit sunt sed a?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sint eligendi necessitatibus unde facilis cumque sunt deleniti tenetur! Reiciendis, explicabo! Doloremque magni ut odio exercitationem deleniti odit blanditiis sapiente incidunt!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
